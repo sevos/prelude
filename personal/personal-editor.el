@@ -6,6 +6,9 @@
 (require 'pbcopy)
 (turn-on-pbcopy)
 
+;; enable silver searcher
+(prelude-require-package 'ag)
+
 ;; enable yasnippet
 (prelude-require-package 'yasnippet)
 
