@@ -25,6 +25,7 @@
           (lambda ()
             (setq truncate-lines nil)))
 
+;; connect erlang mode to specific file types
 (dolist (r '("rebar.config$"
              ".erlang$"
              "\\.config$"
