@@ -42,9 +42,6 @@
 (setq wrangler-path (expand-file-name "vendor/wrangler/elisp" prelude-dir))
 (require 'wrangler)
 
-;; enable helm everywhere!
-(require 'prelude-helm-everywhere)
-
 (defun flatten-list (list)
   (apply #'append list))
 
