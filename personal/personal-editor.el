@@ -11,6 +11,9 @@
 ;; enable silver searcher
 (prelude-require-package 'ag)
 
+;; enable nav
+ (prelude-require-package 'nav)
+
 ;; enable yasnippet
 (prelude-require-package 'yasnippet)
 
@@ -36,11 +39,11 @@
 (setq zoom-window-mode-line-color "#ae81ff")
 
 ;; enable helm everywhere!
-;;(helm-autoresize-mode t)
+(helm-autoresize-mode t)
 (require 'prelude-helm-everywhere)
 
-;;(setq helm-split-window-in-side-p       nil
-;;      helm-move-to-line-cycle-in-source t)
+(setq helm-split-window-in-side-p       nil
+      helm-move-to-line-cycle-in-source t)
 
 ;; rebind tab to run persistent action
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
