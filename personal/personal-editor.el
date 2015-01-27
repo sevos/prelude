@@ -6,26 +6,69 @@
 (require 'pbcopy)
 (turn-on-pbcopy)
 
-(setq guru-warn-only nil)
+;;(setq guru-warn-only nil)
 
-;; enable silver searcher
+
 (prelude-require-package 'ag)
 
-;; enable nav
- (prelude-require-package 'nav)
+(prelude-require-package 'nav)
 
-;; enable yasnippet
 (prelude-require-package 'yasnippet)
+(yas-global-mode)
 
-;; enable zoom-window
 (prelude-require-package 'zoom-window)
 
-;; enable ace-jump-buffer - C-c-J
 (prelude-require-package 'ace-jump-buffer)
 
-;; enable ace-jump-mode - C-c-j
 (prelude-require-package 'ace-jump-mode)
 
+(require 'mouse)
+(xterm-mouse-mode t)
+
+
+(require 'inertial-scroll)
+(setq inertias-global-minor-mode-map
+      (inertias-define-keymap
+       '(
+         ;; Mouse wheel scrolling
+         ("<wheel-up>"   . inertias-down-wheel)
+         ("<wheel-down>" . inertias-up-wheel)
+         ("<mouse-4>"    . inertias-down-wheel)
+         ("<mouse-5>"    . inertias-up-wheel)
+         ;; Scroll keys
+         ("<next>"  . inertias-up)
+         ("<prior>" . inertias-down)
+         ("C-v"     . inertias-up)
+         ("M-v"     . inertias-down)
+         ) inertias-prefix-key))
+(setq inertias-initial-velocity-wheel 10.0)
+(setq inertias-rebound-flash nil)
+(inertias-global-minor-mode 1)
+
+
+(require '6502-mode "6502-mode")
+(add-to-list 'auto-mode-alist '("\\.s$" . 6502-mode))
+(add-hook '6502-mode-hook
+          (lambda ()
+            (ad-disable-advice 'yank 'around 'yank-and-indent)
+            (local-set-key (kbd "RET") 'newline-and-indent)
+            (electric-indent-mode -1)))
+
+(unless window-system
+  (add-hook 'linum-before-numbering-hook
+            (lambda ()
+              (setq-local linum-format-fmt
+                          (let ((w (length (number-to-string
+                                            (count-lines (point-min) (point-max))))))
+                            (concat "%" (number-to-string w) "d"))))))
+
+(defun linum-format-func (line)
+  (concat
+   (propertize (format linum-format-fmt line) 'face 'linum)
+   (propertize " " 'face 'mode-line-buffer-id)))
+
+(unless window-system
+  (setq linum-format 'linum-format-func))
 (global-linum-mode)
 
 ;; enable emmet
@@ -38,12 +81,12 @@
 ;; configure zoom window
 (setq zoom-window-mode-line-color "#ae81ff")
 
-;; enable helm everywhere!
-(helm-autoresize-mode t)
-(require 'prelude-helm-everywhere)
 
-(setq helm-split-window-in-side-p       nil
-      helm-move-to-line-cycle-in-source t)
+(autoload 'forth-mode "gforth.el")
+(autoload 'forth-block-mode "gforth.el")
+(add-to-list 'auto-mode-alist '("\\.fs$" . forth-mode)[])
+
+
 
 ;; rebind tab to run persistent action
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)

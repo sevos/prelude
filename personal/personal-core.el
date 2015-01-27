@@ -2,9 +2,43 @@
 ;;; Commentary:
 ;;; Code:
 
+(defun kill-region-or-backward-kill-word (&optional arg region)
+  "`kill-region' if the region is active, otherwise `backward-kill-word'"
+  (interactive
+   (list (prefix-numeric-value current-prefix-arg) (use-region-p)))
+  (if region
+      (kill-region (region-beginning) (region-end))
+    (backward-kill-word arg)))
 
-(defun personal-split-window-transpose (&optional arg)
-  "Switch between horizontal and vertical 2-window layouts with optional ARG."
+(defun smart-tab ()
+  "This smart tab is minibuffer compliant: it acts as usual in
+    the minibuffer. Else, if mark is active, indents region. Else if
+    point is at the end of a symbol, expands it. Else indents the
+    current line."
+  (interactive)
+  (if (minibufferp)
+      (unless (minibuffer-complete)
+        (dabbrev-expand nil))
+    (if mark-active
+        (indent-region (region-beginning)
+                       (region-end))
+      (if (looking-at "\\_>")
+          (let ((yas-fallback-behavior nil))
+            (unless (yas-expand)
+              (dabbrev-expand nil)))
+        (indent-for-tab-command)))))
+
+;; stops hidding windows on escape...
+(defadvice keyboard-escape-quit (around my-keyboard-escape-quit activate)
+  (let (orig-one-window-p)
+    (fset 'orig-one-window-p (symbol-function 'one-window-p))
+    (fset 'one-window-p (lambda (&optional nomini all-frames) t))
+    (unwind-protect
+        ad-do-it
+      (fset 'one-window-p (symbol-function 'orig-one-window-p)))))
+
+(defun split-window-transpose (&optional arg)
+  "Switch between horizontal and vertical 2-window layouts"
   (interactive "p")
   (if (eq 2 (count-windows))
       (let* ((sel-w (selected-window))
@@ -37,6 +71,12 @@
           ;; determine whether it's left/top or right/bottom
           (if (or (> sel-left 0) (> sel-top 0))
               ;; right bottom
+
+
+
+
+
+
               (progn
                 (set-window-buffer (selected-window) other-b)
                 (other-window 1))

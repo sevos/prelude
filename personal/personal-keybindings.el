@@ -9,7 +9,7 @@
 (global-set-key (kbd "C-x 3") 'personal-split-window-horizontally-and-other-window)
 (global-set-key (kbd "C-x 4") 'balance-windows)
 (global-set-key (kbd "C-x 5") 'personal-swap-windows)
-(global-set-key (kbd "C-x 6") 'personal-split-window-transpose)
+(global-set-key (kbd "C-x 6") 'split-window-transpose)
 (global-set-key (kbd "C-x 7") 'zoom-window-zoom)
 (global-set-key (kbd "M-i")   'personal-indent-region-or-buffer)
 (global-set-key (kbd "M-=")   'er/expand-region)
@@ -18,7 +18,9 @@
 (global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
-(key-chord-define-global "nn" 'nav-toggle-left)
+(key-chord-define-global "jj" 'nav-toggle-left)
+(global-set-key (kbd "TAB") 'smart-tab)
+(global-set-key (kbd "C-w") 'kill-region-or-backward-kill-word)
 
 (provide 'personal-keybindings.el)
 ;;; personal-keybindings.el ends here
