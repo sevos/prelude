@@ -18,14 +18,14 @@
   (interactive)
   (if (minibufferp)
       (unless (minibuffer-complete)
-        (dabbrev-expand nil))
+        (hippie-expand nil))
     (if mark-active
         (indent-region (region-beginning)
                        (region-end))
       (if (looking-at "\\_>")
           (let ((yas-fallback-behavior nil))
             (unless (yas-expand)
-              (dabbrev-expand nil)))
+              (hippie-expand nil)))
         (indent-for-tab-command)))))
 
 ;; stops hidding windows on escape...
