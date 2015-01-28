@@ -25,6 +25,9 @@
 (setq nyan-bar-length 20)
 (nyan-mode)
 
+;; enable subwords
+(global-subword-mode 1)
+
 ;; enable mouse
 (require 'mouse)
 (xterm-mouse-mode t)
