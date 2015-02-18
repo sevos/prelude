@@ -105,11 +105,16 @@
 
 (add-hook 'erlang-mode-hook
           (lambda ()
-            (local-set-key (kbd "C-c C-c") 'inferior-erlang-compile)
+            (local-set-key (kbd "C-c C-c") 'projectile-compile-project )
             (setq inferior-erlang-machine-options (dynamic-inferior-erlang-machine-options))
             (setq erlang-compile-extra-opts (dynamic-erlang-compile-extra-opts))))
 
 (defun dynamic-erlang-compile-extra-opts ()
+
+
+
+
+
   "Generate compile optins with all 'include' dirs."
   (append
    (mapcar (lambda (dir) (cons 'i dir))

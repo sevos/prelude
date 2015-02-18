@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+    <item>
+      <name>Command_L to Command_L</name>
+      <appendix>(+ When you type Command_L only, send Delete)</appendix>
+      <identifier>.commandL2commandL_delete</identifier>
+      <autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_L, KeyCode::COMMAND_L, KeyCode::DELETE</autogen>
+    </item>
+</root>

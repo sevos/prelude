@@ -21,7 +21,7 @@ connect(){
   if [ $@ ]; then
     ngrok $@
   else
-    ngrok --proto=tcp 22
+    ngrok start ssh andrzejsliwa
   fi
 }
 

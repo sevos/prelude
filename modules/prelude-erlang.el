@@ -52,9 +52,6 @@
     (add-to-list 'load-path wrangler-path)
     (require 'wrangler)))
 
-(add-hook 'erlang-mode-hook (lambda ()
-                              (setq erlang-compile-function 'projectile-compile-project)))
-
 (provide 'prelude-erlang)
 
 ;;; prelude-erlang.el ends here

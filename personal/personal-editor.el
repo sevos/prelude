@@ -6,6 +6,7 @@
 (require 'pbcopy)
 (turn-on-pbcopy)
 
+(setq-default tab-width 4)
 ;; enable guru mode
 (setq guru-warn-only nil)
 ;; better grep
@@ -24,6 +25,12 @@
 (prelude-require-package 'nyan-mode)
 (setq nyan-bar-length 20)
 (nyan-mode)
+
+;; configure js tab width
+(add-hook 'js2-mode-hook
+          '(lambda ()
+             (setq tab-width 2
+                   js2-basic-offset tab-width)))
 
 ;; enable subwords
 (global-subword-mode 1)
@@ -59,7 +66,6 @@
 (add-to-list 'auto-mode-alist '("Procfile" . conf-mode))
 
 (require 'smartparens-ruby)
-
 
 ;; handle better linum mode
 (unless window-system

@@ -18,8 +18,8 @@
 (global-set-key (kbd "C-c m n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c m p") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
-(global-set-key (kbd "M-V") 'backward-paragraph)
-(global-set-key (kbd "C-V") 'forward-paragraph)
+(global-set-key (kbd "M-p") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
 
 (key-chord-define-global "jj" 'nav-toggle-left)
 (global-set-key (kbd "TAB") 'smart-tab)
