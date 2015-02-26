@@ -133,5 +133,15 @@
             (erlang-get-deps-include-dirs)))))
 
 
+(prelude-require-packages '(elixir-mode alchemist))
+(require 'elixir-mode)
+(require 'alchemist)
+(defun elixir-mode-compile-on-save ()
+  "Elixir mode compile files on save."
+  (and (file-exists (buffer-file-name))
+       (file-exists (elixir-mode-compiled-file-name))
+       (elixir-cos-mode t)))
+(add-hook 'elixir-mode-hook 'elixir-mode-compile-on-save)
+
 (provide 'personal-erlang)
 ;;; personal-erlang.el ends here

@@ -100,7 +100,20 @@
 (autoload 'forth-block-mode "gforth.el")
 (add-to-list 'auto-mode-alist '("\\.fs$" . forth-mode)[])
 
-
+(helm-autoresize-mode t)
+(setq helm-autoresize-min-height 60
+      helm-autoresize-max-height 60)
+(setq helm-recentf-fuzzy-match t
+      helm-buffers-fuzzy-matching t
+      helm-recentf-fuzzy-match t
+      helm-buffers-fuzzy-matching t
+      helm-locate-fuzzy-match t
+      helm-M-x-fuzzy-match t
+      helm-semantic-fuzzy-match t
+      helm-imenu-fuzzy-match t
+      helm-apropos-fuzzy-match t
+      helm-lisp-fuzzy-completion t)
+(setq helm-split-window-in-side-p       nil)
 
 ;; rebind tab to run persistent action
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
@@ -108,8 +121,6 @@
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
 ;; list actions using C-z
 (define-key helm-map (kbd "C-z")  'helm-select-action)
-
-
 
 ;; disable lockfiles
 (setq create-lockfiles  nil)

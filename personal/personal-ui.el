@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(prelude-require-package 'monokai-theme)
+(require 'monokai-theme)
 ;; load django theme
 (load-theme 'monokai t)
 
