@@ -95,17 +95,10 @@
 ;; configure zoom window
 (setq zoom-window-mode-line-color "#ae81ff")
 
-;; configure magit
-(prelude-require-package 'magit-filenotify-mode)
-(add-hook 'magit-status-mode-hook 'magit-filenotify-mode))
-
-(autoload 'forth-mode "gforth.el")
+(autoload 'fort h-mode "gforth.el")
 (autoload 'forth-block-mode "gforth.el")
 (add-to-list 'auto-mode-alist '("\\.fs$" . forth-mode)[])
 
-;(helm-autoresize-mode t)
-;(setq helm-autoresize-min-height 100
-;      helm-autoresize-max-height 100)
 (setq helm-recentf-fuzzy-match t
       helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match t
@@ -127,7 +120,7 @@
 ;; make TAB works in terminal
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
 ;; list actions using C-z
-(define-key helm-ma p (kbd "C-z")  'helm-select-action)
+(define-key helm-map (kbd "C-z")  'helm-select-action)
 
 ;; disable lockfiles
 (setq create-lockfiles  nil)
