@@ -22,6 +22,7 @@
 (global-set-key (kbd "M-n") 'forward-paragraph)
 
 (key-chord-define-global "jj" 'nav-toggle-left)
+(key-chord-define-global "kk" 'ace-window)
 (global-set-key (kbd "TAB") 'smart-tab)
 (global-set-key (kbd "C-w") 'kill-region-or-backward-kill-word)
 

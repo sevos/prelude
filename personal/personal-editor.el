@@ -100,9 +100,9 @@
 (autoload 'forth-block-mode "gforth.el")
 (add-to-list 'auto-mode-alist '("\\.fs$" . forth-mode)[])
 
-(helm-autoresize-mode t)
-(setq helm-autoresize-min-height 60
-      helm-autoresize-max-height 60)
+;(helm-autoresize-mode t)
+;(setq helm-autoresize-min-height 100
+;      helm-autoresize-max-height 100)
 (setq helm-recentf-fuzzy-match t
       helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match t
@@ -114,6 +114,10 @@
       helm-apropos-fuzzy-match t
       helm-lisp-fuzzy-completion t)
 (setq helm-split-window-in-side-p       nil)
+
+(prelude-require-package 'ace-window)
+(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+
 
 ;; rebind tab to run persistent action
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
