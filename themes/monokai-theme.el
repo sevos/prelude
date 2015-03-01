@@ -451,7 +451,6 @@ Also affects 'linum-mode' background."
       (,terminal-class (:foreground ,terminal-orange
                                     :weight bold))))
 
-   ;; cua
    `(cua-global-mark
      ((,class (:background ,yellow
                            :foreground ,monokai-bg))
@@ -886,11 +885,11 @@ Also affects 'linum-mode' background."
                                     :inverse-video nil))))
 
    `(ace-jump-face-foreground
-     ((,class (:foreground ,yellow
+     ((,class (:foreground ,red
                            :background ,monokai-bg
                            :inverse-video nil
                            :weight bold))
-      (,terminal-class (:foreground ,terminal-yellow
+      (,terminal-class (:foreground ,terminal-red
                                     :background ,terminal-monokai-bg
                                     :inverse-video nil
                                     :weight bold))))
