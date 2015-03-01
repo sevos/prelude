@@ -95,7 +95,7 @@
 ;; configure zoom window
 (setq zoom-window-mode-line-color "#ae81ff")
 
-(autoload 'fort h-mode "gforth.el")
+(autoload 'forth-mode "gforth.el")
 (autoload 'forth-block-mode "gforth.el")
 (add-to-list 'auto-mode-alist '("\\.fs$" . forth-mode)[])
 
