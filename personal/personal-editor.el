@@ -85,9 +85,16 @@
   (setq linum-format 'linum-format-func))
 (global-linum-mode)
 
+
+
 ;; enable emmet
 (prelude-require-package 'emmet-mode)
 (add-hook 'web-mode-hook 'emmet-mode)
+
+;; enable linum-off
+(prelude-require-package 'linum-off)
+(require 'linum-off)
+(setq linum-disabled-modes-list '(erlang-shell eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode))
 
 ;; enable multicursor
 (prelude-require-package 'multiple-cursors)
