@@ -95,7 +95,10 @@
 (prelude-require-package 'smart-mode-line)
 (sml/setup)
 
-(setq key-chord-two-keys-delay 0.5)
+(require 'deft)
+(setq deft-extension "org")
+(setq deft-text-mode 'org-mode)
+(setq deft-directory "~/Dropbox/Notes")
 
 ;; configure zoom window
 (setq zoom-window-mode-line-color "#ae81ff")
