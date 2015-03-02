@@ -92,6 +92,11 @@
 ;; enable multicursor
 (prelude-require-package 'multiple-cursors)
 
+(prelude-require-package 'smart-mode-line)
+(sml/setup)
+
+(setq key-chord-two-keys-delay 0.5)
+
 ;; configure zoom window
 (setq zoom-window-mode-line-color "#ae81ff")
 
