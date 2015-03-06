@@ -3,6 +3,7 @@
 ;;; Code:
 
 (global-set-key (kbd "C-q")   'bury-buffer)
+
 (global-set-key (kbd "C-x 0") 'delete-window)
 (global-set-key (kbd "C-x 1") 'delete-other-windows)
 (global-set-key (kbd "C-x 2") 'personal-split-window-vertically-and-other-window)
@@ -26,6 +27,12 @@
 (key-chord-define-global ";;" 'ace-window)
 (global-set-key (kbd "TAB") 'smart-tab)
 (global-set-key (kbd "C-w") 'kill-region-or-backward-kill-word)
+
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (dired-omit-mode 1)
+            (define-key dired-mode-map (kbd "C-q") 'dired-up-directory)
+            ))
 
 (provide 'personal-keybindings.el)
 ;;; personal-keybindings.el ends here
