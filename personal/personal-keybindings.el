@@ -3,7 +3,6 @@
 ;;; Code:
 
 (global-set-key (kbd "C-q")   'bury-buffer)
-
 (global-set-key (kbd "C-x 0") 'delete-window)
 (global-set-key (kbd "C-x 1") 'delete-other-windows)
 (global-set-key (kbd "C-x 2") 'personal-split-window-vertically-and-other-window)

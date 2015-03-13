@@ -102,8 +102,15 @@
 (prelude-require-package 'smart-mode-line)
 (sml/setup)
 
+(require 'kick-mode)
+(dolist (r '("\\.asm$"
+             "\\.s$"))
+  (add-to-list 'auto-mode-alist (cons r 'kick-mode)))
+
+
 (require 'deft)
-(setq deft-extension "org")
+(setq deft-auto-save-interval 10.0)
+(setq deft-extension "md")
 (setq deft-text-mode 'org-mode)
 (setq deft-directory "~/Dropbox/Notes")
 
