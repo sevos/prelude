@@ -30,7 +30,7 @@
 (add-hook 'dired-mode-hook
           (lambda ()
             (dired-omit-mode 1)
-            (define-key dired-mode-map (kbd "C-q") 'dired-up-directory)
+            (define-key dired-mode-map (kbd "C-l") 'dired-up-directory)
             ))
 
 (provide 'personal-keybindings.el)
