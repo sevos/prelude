@@ -65,6 +65,8 @@
 
 (add-to-list 'auto-mode-alist '("Procfile" . conf-mode))
 
+(setq projectile-switch-project-action 'projectile-dired)
+
 (require 'smartparens-ruby)
 
 ;; handle better linum mode

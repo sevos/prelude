@@ -20,7 +20,6 @@
 (global-set-key (kbd "C-c m a") 'mc/mark-all-like-this)
 (global-set-key (kbd "M-p") 'backward-paragraph)
 (global-set-key (kbd "M-n") 'forward-paragraph)
-
 (key-chord-define-global ";;" 'nav-toggle-left)
 (key-chord-define-global "dk" 'deft)
 (key-chord-define-global "jj" 'ace-window)
@@ -33,5 +32,13 @@
             (define-key dired-mode-map (kbd "C-l") 'dired-up-directory)
             ))
 
+(global-set-key (kbd "C-c c")
+                (lambda ()
+                  (interactive)
+                  (set-face-attribute 'default nil :font "C64 Pro Mono-16")))
+(global-set-key (kbd "C-c x")
+                (lambda ()
+                  (interactive)
+                  (set-face-attribute 'default nil :font "Anonymous Pro-16")))
 (provide 'personal-keybindings.el)
 ;;; personal-keybindings.el ends here

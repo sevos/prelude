@@ -5,6 +5,14 @@
 ;; disable ring bell
 (setq ring-bell-function 'ignore)
 
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
+
+(add-hook 'after-make-frame-functions
+          '(lambda (frame)
+             (modify-frame-parameters frame
+                                      '((vertical-scroll-bars . nil)
+                                        (horizontal-scroll-bars . nil)))))
 (custom-theme-set-faces
  'smart-mode-line-dark
  '(mode-line-buffer-id ((t :inherit sml/filename :foreground nil :background nil)))
