@@ -67,6 +67,17 @@
 
 (setq projectile-switch-project-action 'projectile-dired)
 
+(prelude-require-package 'sql-indent)
+(setq sql-postgres-login-params
+      '((user :default "postgres")
+        (database :default "postgres")
+        (server :default "localhost")
+        (port :default 5432)))
+
+(add-hook 'sql-interactive-mode-hook
+          (lambda ()
+            (toggle-truncate-lines t)))
+
 (require 'smartparens-ruby)
 
 ;; handle better linum mode

@@ -8,6 +8,8 @@
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 
+(blink-cursor-mode 1)
+(setq-default cursor-type 'bar)
 (add-hook 'after-make-frame-functions
           '(lambda (frame)
              (modify-frame-parameters frame
