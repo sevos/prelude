@@ -26,7 +26,7 @@
 (key-chord-define-global "jj" 'ace-window)
 (global-set-key (kbd "TAB") 'smart-tab)
 (global-set-key (kbd "C-w") 'kill-region-or-backward-kill-word)
-
+(global-set-key (kbd "<s-return>") 'toggle-frame-fullscreen)
 (add-hook 'dired-mode-hook
           (lambda ()
             (dired-omit-mode 1)
