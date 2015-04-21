@@ -3,6 +3,10 @@
 ;;; Code:
 
 (prelude-require-package 'robe)
+(prelude-require-package 'rvm)
+
+(require 'rvm)
+(rvm-use-default)
 
 ;; connect robe-mode to ruby-mode
 (add-hook 'ruby-mode-hook 'robe-mode)
