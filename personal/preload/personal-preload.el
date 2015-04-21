@@ -9,7 +9,7 @@
     (progn (toggle-scroll-bar -1)
            (tool-bar-mode -1)
            (setq ns-pop-up-frames nil)
-           (set-face-attribute 'default nil :font "Anonymous Pro-16")))
+           (set-face-attribute 'default nil :font "Anonymous Pro-24")))
 
 (server-force-delete)
 (server-start)
