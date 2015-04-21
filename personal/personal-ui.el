@@ -9,7 +9,7 @@
 (tool-bar-mode -1)
 
 (blink-cursor-mode 1)
-(setq-default cursor-type 'bar)
+;; (setq-default cursor-type 'bar)
 (add-hook 'after-make-frame-functions
           '(lambda (frame)
              (modify-frame-parameters frame
@@ -27,6 +27,8 @@
  '(sml/read-only ((t :inherit sml/not-modified :foreground "DeepSkyBlue")))
  '(persp-selected-face ((t :foreground "ForestGreen" :inherit sml/filename)))
  '(helm-candidate-number ((t :foreground nil :background nil :inherit sml/filename))))
+
+(setq ns-use-native-fullscreen nil)
 
 (provide 'personal-ui)
 ;;; personal-ui ends here
