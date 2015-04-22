@@ -29,6 +29,7 @@
  '(helm-candidate-number ((t :foreground nil :background nil :inherit sml/filename))))
 
 (setq ns-use-native-fullscreen nil)
+(setq magit-last-seen-setup-instructions "1.4.0")
 
 (provide 'personal-ui)
 ;;; personal-ui ends here
