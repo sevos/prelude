@@ -23,6 +23,7 @@
 (prelude-require-package 'ace-jump-mode)
 ;; enable progress bar via as nyan cat ;)
 (prelude-require-package 'nyan-mode)
+(prelude-require-package 'multi-term)
 (setq nyan-bar-length 20)
 (nyan-mode)
 
